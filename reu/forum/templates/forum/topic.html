@@ -1,0 +1,8 @@
+<h1>{{ topic.title }}</h1>
+<ul>
+    {% for post in topic.post_set.all %}
+    <p>From: {{ post.created_by }} | Posted: {{ post.created_on }} | #{{ post.id }}</p>
+    <body>{{ post.body }}</body>
+    {% endfor %}
+</ul>
+<p><a href="{% url 'forum:forum' topic.forum.name %}">Return to topic list</a></p>

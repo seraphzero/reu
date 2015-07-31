@@ -9,7 +9,7 @@ class Forum(models.Model):
     def __str__(self):
         return self.name
 
-class Thread(models.Model):
+class Topic(models.Model):
     forum = models.ForeignKey(Forum)
     title = models.CharField(max_length=80)
     created_by = models.ForeignKey(User)
@@ -19,7 +19,7 @@ class Thread(models.Model):
         return self.title
 
 class Post(models.Model):
-    thread = models.ForeignKey(Thread)
+    topic = models.ForeignKey(Topic)
     created_by = models.ForeignKey(User)
     created_on = models.DateTimeField(auto_now_add=True)
     body = models.TextField()

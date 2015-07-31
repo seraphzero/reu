@@ -1,0 +1,11 @@
+<h1>{{ forum.name }}</h1>
+{% if topics %}
+<ul>
+    {% for topic in topics %}
+    <li><a href="{% url 'forum:topic' topic.id %}">{{ topic.title }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>There are no topics to show here.</p>
+{% endif %}
+<p><a href="{% url 'forum:index' %}">Return to forum homepage</a></p>

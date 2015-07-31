@@ -1,0 +1,7 @@
+<h1>Welcome to the Restaurant at the End of the Universe!</h1>
+
+<ul>
+    {% for forum in forum_list %}
+    <li><a href="{% url 'forum:forum' forum.name %}">{{ forum.name }}</a></li>
+    {% endfor %}
+</ul>
