@@ -1,0 +1,18 @@
+{% if forum %}
+<h1>New topic for {{ forum.name }}</h1>
+
+<form action="{% url 'forum:new_topic' forum.name %}" method="post">
+    {% csrf_token %}
+    <label for="{{ form.title.id_for_label }}"><b>Topic Title:</b></label><br />
+    {{ form.title }} <br /><br />
+{% else %}
+<h1>New post</h1>
+
+<form action="{% url 'forum:new_post' topic.id %}" method="post">
+    {% csrf_token %}
+    <b>Topic Title:</b> {{ topic.title }} <br /><br />
+{% endif %}
+    <label for="{{ form.body.id_for_label }}"><b>Your Message:</b></label><br />
+    {{ form.body }} <br />
+    <input type="submit" value="Post">
+</form>

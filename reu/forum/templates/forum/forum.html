@@ -8,4 +8,4 @@
 {% else %}
 <p>There are no topics to show here.</p>
 {% endif %}
-<p><a href="{% url 'forum:index' %}">Return to forum homepage</a></p>
+<p><a href="{% url 'forum:new_topic' forum.name %}">Post New Topic</a> | <a href="{% url 'forum:index' %}">Return to forum homepage</a></p>
