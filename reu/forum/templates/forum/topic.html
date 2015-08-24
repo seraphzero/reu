@@ -5,4 +5,4 @@
     <body>{{ post.body }}</body>
     {% endfor %}
 </ul>
-<p><a href="{% url 'forum:new_post' topic.id %}">Post New Message</a> | <a href="{% url 'forum:forum' topic.forum.name %}">Return to topic list</a></p>
+<p><a href="{% url 'forum:new_post' topic.id %}">Post New Message</a> | <a href="{{ topic.forum.get_absolute_url }}">Return to topic list</a></p>

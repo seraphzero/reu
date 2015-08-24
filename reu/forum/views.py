@@ -17,7 +17,7 @@ class IndexView(generic.ListView):
 class ForumView(generic.ListView):
     model = Topic
     template_name = 'forum/forum.html'
-    context_object_name = 'topics'
+    # context_object_name = 'topics'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

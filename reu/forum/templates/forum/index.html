@@ -2,6 +2,6 @@
 
 <ul>
     {% for forum in forum_list %}
-    <li><a href="{% url 'forum:forum' forum.name %}">{{ forum.name }}</a></li>
+    <li><a href="{{ forum.get_absolute_url }}">{{ forum.name }}</a></li>
     {% endfor %}
 </ul>

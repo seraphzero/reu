@@ -1,8 +1,8 @@
 <h1>{{ forum.name }}</h1>
-{% if topics %}
+{% if topic_list %}
 <ul>
-    {% for topic in topics %}
-    <li><a href="{% url 'forum:topic' topic.id %}">{{ topic.title }}</a></li>
+    {% for topic in topic_list %}
+    <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a></li>
     {% endfor %}
 </ul>
 {% else %}

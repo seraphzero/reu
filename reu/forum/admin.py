@@ -10,7 +10,7 @@ class PostInline(admin.TabularInline):
     model = Post
 
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created_by', 'created_on')
+    list_display = ('title', 'created_by', 'created_on', 'number_of_posts')
     inlines = [PostInline]
 
 # class PostAdmin(admin.ModelAdmin):
